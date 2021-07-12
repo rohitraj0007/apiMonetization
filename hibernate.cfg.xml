@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.password">password</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/api_monetization</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">1</property>
+
+		<!-- control connection pooling -->
+		<property name="hibernate.c3p0.min_size">10</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.timeout">1800</property>
+		<property name="hibernate.c3p0.validate">1800</property>
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbmdl.auto">update</property>
+		<!-- Monitor and debug connection pooling -->
+		<property name="hibernate.c3p0.unreturnedConnectionTimeout">30</property>
+		<property
+			name="hibernate.c3p0.debugUnreturnedConnectionStackTraces">true</property>
+		<property name="show_sql">true</property>
+
+
+		<mapping class="com.topcoderrohit.monetization.model.Customer" />
+		<mapping class="com.topcoderrohit.monetization.model.Developer" />
+		<mapping class="com.topcoderrohit.monetization.model.CustomerService" />
+		<mapping class="com.topcoderrohit.monetization.model.Freemium" />
+		<mapping class="com.topcoderrohit.monetization.model.RevenueShare" />
+		<mapping class="com.topcoderrohit.monetization.model.Services" />
+		<mapping class="com.topcoderrohit.monetization.model.ServiceRate" />
+		<mapping class="com.topcoderrohit.monetization.model.Transaction" />
+		<!-- <property name="packagesToScan" value="com.topcoderrohit.monetization"/> -->
+		<!-- <mapping package="com.topcoderrohit.monetization.model" /> -->
+
+	</session-factory>
+</hibernate-configuration>
+
